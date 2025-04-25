@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>신고 내역</title>
+</head>
+<body>
+  <h1>신고 목록</h1>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>신고 ID</th>
+        <th>신고자 ID</th>
+        <th>상품 ID</th>
+        <th>사유</th>
+        <th>신고일</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for r in reports %}
+      <tr>
+        <td>{{ r.id }}</td>
+        <td>{{ r.reporter_id }}</td>
+        <td>{{ r.product_id }}</td>
+        <td>{{ r.reason }}</td>
+        <td>{{ r.created_at }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>
